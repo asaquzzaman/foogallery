@@ -160,6 +160,8 @@ if ( ! class_exists( 'FooGallery_Admin_Album_MetaBoxes' ) ) {
 
 			$galleries = $this->get_ordered_galleries( $album );
 
+			wp_enqueue_style( 'media-views' );
+
 			?>
 			<input type="hidden" name="<?php echo FOOGALLERY_CPT_ALBUM; ?>_nonce"
 			       id="<?php echo FOOGALLERY_CPT_ALBUM; ?>_nonce"
@@ -444,7 +446,6 @@ if ( ! class_exists( 'FooGallery_Admin_Album_MetaBoxes' ) ) {
 										break;
 
 									case 'checkbox':
-
 										// Set the checkbox checked or not
 										if ( $value == 'on' )
 											$checked = ' checked="checked"';
@@ -458,7 +459,6 @@ if ( ! class_exists( 'FooGallery_Admin_Album_MetaBoxes' ) ) {
 										break;
 
 									case 'radio':
-
 										$html = '';
 
 										if ( ! empty( $values['options'] ) ) {
